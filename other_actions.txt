@@ -1,3 +1,13 @@
 # 2020年12月28日22:20:15
 
 开始记录各种杂项（软件安装、遇到的bug、配置文件书写、经验...）
+
+# 2020年12月30日00:00:59
+
+使用opam安装coq
+
+1. ppa还是要注意的，有时会影响到包版本
+2. 从opam安装coq时，最耗时的步骤是在opam init与opam-depext coq这一步（大约5-10分钟都是可以忍受的）
+3. 一共参考了这两篇https://zhuanlan.zhihu.com/p/124333375
+和https://blog.csdn.net/ReimuYk/article/details/104108182和https://www.cnblogs.com/sjjsxl/p/6809749.html，其他的文章不用看了
+
