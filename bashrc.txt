@@ -1,0 +1,272 @@
+# for hexo
+
+alias "hn"="hexo new"
+alias "hgd"="hexo g -d"
+alias "hc"="hexo clean"
+alias "hs"="hexo s"
+
+# do not forget to install the hexo-deployer-git!!!
+alias "hi"="hexo init && npm install hexo-deployer-git --save"
+
+# for proxy settings
+# just for temp usage.
+
+# ge for git environment.
+alias "ge"="cd /d/apikeys"
+
+alias "px"="git config http.proxy sock5://127.0.0.1:10086 && git config https.proxy socks5://127.0.0.1:10086"
+alias "ps"="git config --get http.proxy"
+
+# cancel
+alias "npx"="git config --global --unset http.proxy"
+
+
+# for hugo
+
+alias "hgn"="hugo new"
+# hugo build is "hugo"
+alias "hgb"="hugo"
+# localhost 1313
+alias "hgs"="hugo server -D"
+
+alias "g"="git"
+alias "gst"="git status"
+alias "o"="start"
+alias "ga."="git add ."
+alias "gcm"="git commit -m"
+alias "gp"="git push"
+alias "gl"="git pull"
+alias "gco"="git checkout"
+alias "gb"="git branch"
+alias "gcl"="git clone"
+alias "gd"="git diff"
+alias "cls"="clear"
+
+function ug(){
+	ga.
+	gcm $(date "+%Y-%m-%d_%H:%M:%S")
+	gp
+}
+
+alias "sb"="source ~/.bashrc"
+
+alias "vb"="vim ~/.bashrc && cp ~/.bashrc /d/windows_config/bashrc.txt"
+
+# record other actions
+
+alias "roa"="cd /d/windows_config && vim ./other_actions.txt"
+
+# D:\OneDrive - CUHK-Shenzhen
+
+alias 'od'="cd /d/'OneDrive - CUHK-Shenzhen'"
+
+# br means 'go to blog's root'
+
+alias 'br'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365Blog/Linkeer365.github.io"
+
+# bp means 'go to the _posts'
+
+alias 'bp'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365Blog/Linkeer365.github.io/source/_posts"
+
+# dr, dp for my diary case.
+
+alias 'dr'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365Diary"
+alias 'dp'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365Diary/source/_posts"
+
+# clr, clp for my colorfullife case
+
+alias 'clr'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365ColorfulLife"
+alias 'clp'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365ColorfulLife/source/_posts"
+
+# clr, clp for my colorfullife2 case
+
+alias 'clr2'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365ColorfulLife2"
+alias 'clp2'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365ColorfulLife2/source/_posts"
+
+alias 'clr3'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365ColorfulLife3"
+alias 'clp3'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365ColorfulLife3/source/_posts"
+
+
+# tmr, tmp for tiny moment
+
+alias 'tmr'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365TinyMoment"
+alias 'tmp'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365TinyMoment/source/_posts"
+
+# brr, brp for book review
+
+alias 'brr'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365BookReview"
+alias 'brp'="cd /d/'OneDrive - CUHK-Shenzhen'/Linkeer365BookReview/source/_posts"
+
+
+# rdd means root directory d; rdc means root directory c
+
+alias 'rdd'='cd /d/'
+
+alias 'rdc'='cd /c/'
+
+
+# pyp means python project, cppp, pcp; jp;hp means cpp project; pure c project; java project;haskell project
+
+alias 'pyp'="cd /d/'OneDrive - CUHK-Shenzhen'/programming/pyProjects"
+alias 'cppp'="cd /d/'OneDrive - CUHK-Shenzhen'/programming/cppProjects"
+alias 'pcp'="cd /d/'OneDrive - CUHK-Shenzhen'/programming/PureCProjects"	
+alias 'jp'="cd /d/'OneDrive - CUHK-Shenzhen'/programming/javaProjects"
+alias 'hp'="cd /d/'OneDrive - CUHK-Shenzhen'/programming/HaskellProjects"
+alias 'rp'="cd /d/'OneDrive - CUHK-Shenzhen'/programming/RustProjects"
+
+function sr(){
+	stack runghc $1
+}
+
+# rust cargo new 
+function cnb(){
+	cargo new $1 --bin
+}
+
+# rust build
+
+function cb(){
+	cargo build
+}
+
+function cr(){
+	cargo run
+}
+
+
+# vmh means visual machine's home.
+
+alias 'vmh'='cd /d/VMwareHome/Lubuntu1604/'
+
+# sf is UbuntuWinShare folder.
+
+alias 'sf'='cd /d/SubSystem1804/UbuntuWinShare'
+
+# sfa is send file to ArchiveMePlease
+
+alias 'sfa1'='scp /d/win2vultr/outer_links.txt root@137.220.42.229:/root/ArchiveMePlease'
+alias 'sfa2'='scp /d/win2vultr/outer_links.txt root@208.167.233.71:/root/ArchiveMePlease'
+
+# vmb means visual machine's boot.(with no gui...)
+function vmb(){
+	vm_path='/d/VMwareHome/Lubuntu1604/Lubuntu1604.vmx'
+	# 下面这个命令是 https://blog.csdn.net/forest_boy/article/details/49931505 的
+	vmrun -T ws start $vm_path nogui
+}
+
+function vmbg(){
+	vm_path='/d/VMwareHome/Lubuntu1604/Lubuntu1604.vmx'
+	# 下面这个命令是 https://blog.csdn.net/forest_boy/article/details/49931505 的
+	vmrun -T ws start $vm_path gui
+}
+
+function la(){
+	ge && px
+	url=$1
+	archivenow ${url}
+}
+
+
+# 这个命令'shopt -s expand_aliases'使得function里面能够直接使用alias(注意bash全局性!)
+## sea= set expanded alias
+function sea(){
+	shopt -s expand_aliases
+}
+
+# 这个命令'shopt -u expand_aliases'使得function里面都不能直接使用alias(注意bash全局性!)
+## usea= unset expanded alias
+function usea(){
+	shopt -u expand_aliases
+}
+
+# 上面这个usea命令建议移到外部使用, 就是觉得某个函数不适合用alias再设置
+
+# w2u means 'path convension from windows to unix.'
+
+function w2u(){
+# Shell 函数返回值只能是整数，一般用来表示函数执行成功与否，0表示成功，其他值表示失败。如果 return 其他数据，比如一个字符串，往往会得到错误提示：“numeric argument required”
+# 如果一定要让函数返回字符串，那么可以先定义一个变量，用来接收函数的计算结果，脚本在需要的时候访问这个变量来获得函数返回值。
+	echo "/$1" | sed -e 's/\\/\//g' -e 's/://'
+}
+
+function uguh(){
+# upload github & upload hexo
+	git add .
+	message=$1
+	git commit -m "${message}"
+	git push
+	# hexo clean
+	hexo g -d
+}
+
+function wtm(){
+# write tiny moments
+	tmp
+	file_name=$1
+	hn "${file_name}"
+	file_name+=".md"
+# 突然意识到能够直接用vscode打开，那还用个p的vim
+	vim ${file_name}
+}
+
+# function ohnb(){
+# # outside hexo new blog (不在hexo文件夹下面时, 切换到hexo文件夹下)
+	# blog_path='/d/Linkeer365Blog/Linkeer365.github.io/source/_posts'
+	# cd $blog_path
+	# message=$1
+	# hexo new "${message}"
+# }
+
+# function ohnd(){
+# # outside hexo new diary (不在hexo文件夹下面时, 切换到hexo文件夹下)
+	# diary_path='/d/Linkeer365Diary/source/_posts'
+	# cd $diary_path
+	# message=$1
+	# hexo new "${message}"
+# }
+
+# function ohnc(){
+# # outside hexo new colorfullife (不在hexo文件夹下面时, 切换到hexo文件夹下)
+# # 注意, bash下运行函数是不能有括号的!
+	# sea
+	# clp
+	# message=$1
+	# hn "${message}"
+# }
+
+# function ouguhb(){
+# # 不在hexo文件夹下时, 切换到hexo文件夹下
+	# git_path='/d/Linkeer365Blog/Linkeer365.github.io'
+	# cd $git_path
+	# git add .
+	# message=$1
+	# git commit -m "${message}"
+	# git push
+	# # hexo clean
+	# hexo g
+	# hexo d
+# }
+
+# function ouguhd(){
+# # 不在hexo文件夹下时, 切换到hexo文件夹下
+	# git_path='/d/Linkeer365Diary'
+	# cd $git_path
+	# git add .
+	# message=$1
+	# git commit -m "${message}"
+	# git push
+	# # hexo clean
+	# hexo g
+	# hexo d
+# }
+
+# function ouguhc(){
+# # 不在hexo文件夹下时, 切换到hexo文件夹下
+# # 注意, bash下运行函数是不能有括号的!
+	# sea
+	# clr
+	# ga.
+	# message=$1
+	# gcm "${message}"
+	# gp
+# }
