@@ -50,9 +50,13 @@ function ug(){
 
 alias "sb"="source ~/.bashrc"
 
-alias "vb"="vim ~/.bashrc && cp ~/.bashrc /d/windows_config/bashrc.txt"
+alias "vb"="vim ~/.bashrc"
+
+alias "ub"="cp ~/.bashrc /d/windows_config/bashrc.txt && cd /d/windows_config && ug"
 
 # record other actions
+
+alias "ghi"="cd /d/visited_urls_chrome && python ./get_history_info_win.py && ug"
 
 alias "roa"="cd /d/windows_config && vim ./other_actions.txt"
 
