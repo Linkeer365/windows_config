@@ -41,7 +41,8 @@ alias "gb"="git branch"
 alias "gcl"="git clone"
 alias "gd"="git diff"
 alias "cls"="clear"
-
+# 查看origin版本的命令，目的是将所有的https换成ssh这样密码就不用输很多遍
+alias "gr"="git remote -v"
 function ug(){
 	ga.
 	gcm $(date "+%Y-%m-%d_%H:%M:%S")
@@ -59,6 +60,7 @@ alias "ub"="cp ~/.bashrc /d/windows_config/bashrc.txt && cd /d/windows_config &&
 alias "ghi"="cd /d/visited_urls_chrome && python ./get_history_info_win.py && ug"
 
 alias "roa"="cd /d/windows_config && vim ./other_actions.txt"
+
 
 # D:\OneDrive - CUHK-Shenzhen
 
@@ -212,6 +214,10 @@ function wtm(){
 # 突然意识到能够直接用vscode打开，那还用个p的vim
 	vim ${file_name}
 }
+
+# wtp = write tiny pins
+
+alias "wtp"="tmp && vim 随手记录.md"
 
 # function ohnb(){
 # # outside hexo new blog (不在hexo文件夹下面时, 切换到hexo文件夹下)
