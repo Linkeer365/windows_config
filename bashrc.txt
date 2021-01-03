@@ -139,6 +139,13 @@ function cr(){
 	cargo run
 }
 
+function hnn(){
+	for arg in "$@"
+	do
+		hexo new $arg
+	done
+	echo "initial finished.\n"
+}
 
 # vmh means visual machine's home.
 
