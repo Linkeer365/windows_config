@@ -144,8 +144,36 @@ function hnn(){
 	do
 		hexo new $arg
 	done
-	echo "initial finished.\n"
+	echo "initial finished."
 }
+
+# search by...(from 91khr)
+
+function bings() { 
+	start "https://bing.com/search?q=${*// /+}" 
+}
+
+function ggs(){ 
+	start "https://google.com/search?q=${*// /+}" 
+}
+
+function zhs(){
+	start "https://zhihu.com/search?=${*// /+}"
+}
+
+# prompt outlook (from 91khr)
+
+## original for linux bash
+# setopt PROMPT_SUBST
+# export PROMPT='%F{3}[%d]%f %(?.%F{2}%?%f.%F{1}%?%f)
+# %(#.%F{5}%n.%F{6}%n)%f%# '
+
+# prompt on windows git bash: https://stackoverflow.com/questions/13001902/how-to-configure-git-bash-prompt-by-adding-datetime
+
+
+# PS1="\[\033]0;$MSYSTEM:\w\007 \[\033[36m\]\t \[\033[32m\]\u@\h \[\033[33m\w$(__git_ps1)\033[0m\] $ " 
+# PS1='\[\033]0;$MSYSTEM:\w\007 \[\033[36m\]\t \[\033[32m\]\u@\h \[\033[33m\w\033[0m\] $ "
+PS1="$PS1[\D{%F %T}] -> "
 
 # vmh means visual machine's home.
 
@@ -166,6 +194,7 @@ function vmb(){
 	# 下面这个命令是 https://blog.csdn.net/forest_boy/article/details/49931505 的
 	vmrun -T ws start $vm_path nogui
 }
+
 
 function vmbg(){
 	vm_path='/d/VMwareHome/Lubuntu1604/Lubuntu1604.vmx'
