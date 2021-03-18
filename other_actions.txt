@@ -11,3 +11,11 @@
 3. 一共参考了这两篇https://zhuanlan.zhihu.com/p/124333375
 和https://blog.csdn.net/ReimuYk/article/details/104108182和https://www.cnblogs.com/sjjsxl/p/6809749.html，其他的文章不用看了
 
+# 2021年3月19日01:25:21
+
+vscode替换整行
+https://stackoverflow.com/questions/30351529/find-and-replace-with-a-newline-in-visual-studio-code
+
+vscode 全局搜索
+
+ctrl+shft+f
