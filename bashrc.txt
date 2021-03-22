@@ -45,7 +45,7 @@ alias "cls"="clear"
 alias "gr"="git remote -v"
 function ug(){
 	ga.
-	gcm $(date "+%Y-%m-%d_%H:%M:%S")
+	gcm $(date "+%Y-%m-%d_%H:%M:%S")+$1
 	gp
 }
 
@@ -54,6 +54,9 @@ alias "sb"="source ~/.bashrc"
 alias "vb"="vim ~/.bashrc"
 
 alias "ub"="cp ~/.bashrc /d/windows_config/bashrc.txt && cd /d/windows_config && ug"
+
+alias "vv"="vim ~/.vimrc"
+alias "uv"="cp ~/.vimrc /d/windows_config/vimrc.txt && cd /d/windows_config && ug"
 
 # record other actions
 
@@ -140,11 +143,18 @@ function cr(){
 }
 
 function hnn(){
-	for arg in "$@"
+    new_args=()
+    for arg in "$@"
 	do
 		hexo new $arg
+        new_arg=$arg".md"
+        # echo $new_arg
+        # add elements one by one: https://blog.csdn.net/whatday/article/details/105071216
+        new_args[${#new_args[@]}]=$new_arg
 	done
+    echo ${new_args[@]}
 	echo "initial finished."
+    code ${new_args[@]}
 }
 
 # search by...(from 91khr)
